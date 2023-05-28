@@ -5,7 +5,7 @@
 - O VS Code é um tipo especial de editor de texto chamado compilador. Na parte superior, você notará um editor de texto e na parte inferior, verá um terminal onde poderá executar comandos.
 - No terminal, você pode executar `code ola.py` para iniciar a codificação.
 - No editor de texto acima, você pode digitar `print("olá, mundo")`. Este é um programa canônico famoso que quase todos os codificadores escrevem durante o processo de aprendizado.
-- Na janela do terminal, você pode executar comandos. Para executar este programa, você precisará mover o cursor para a parte inferior da tela, clicando na janela do terminal. Agora você pode digitar um segundo comando na janela do terminal. Ao lado do cifrão, digite `python ola.py` e pressione a tecla <kbd>Enter↵</kbd> no teclado.
+- Na janela do terminal, você pode executar comandos. Para executar este programa, você precisará mover o cursor para a parte inferior da tela, clicando na janela do terminal. Agora você pode digitar um segundo comando na janela do terminal. Ao lado do cifrão, digite `python ola.py` e pressione a tecla `⏎ Enter` no teclado.
 - Lembre-se, os computadores realmente só entendem zeros e uns. Portanto, quando você executar `python ola.py`, o python interpretará o texto que você criou `ola.py` e o traduzirá em zeros e uns que o computador possa entender.
 - O resultado da execução do `python ola.py` programa é `olá, mundo`.
 - Parabéns! Você acabou de criar seu primeiro programa.
@@ -60,7 +60,7 @@ print("olá, nome")
 - Editando ainda mais nosso código, você pode digitar
 
 ```python
-name = input("Qual o seu nome? ")
+nome = input("Qual o seu nome? ")
 print("olá,")
 print(nome)
 ```
@@ -75,7 +75,7 @@ David
 
 - Estamos cada vez mais perto do resultado que pretendemos!
 
-- Você pode aprender mais na documentação do Python sobre [tipos de dados](https://docs.python.org/3/library/datatypes.html) .
+- Você pode aprender mais na documentação do Python sobre [tipos de dados](https://docs.python.org/3/library/datatypes.html).
 
 ### Comentários
 
@@ -146,7 +146,7 @@ print("olá,")
 print(nome)
 ```
 
-- As funções recebem argumentos que influenciam seu comportamento. Se olharmos a documentação, [print](https://docs.python.org/3/library/functions.html#print) você perceberá que podemos aprender muito sobre os argumentos que a função print recebe.
+- As funções recebem argumentos que influenciam seu comportamento. Se olharmos a documentação, [`print`](https://docs.python.org/3/library/functions.html#print) você perceberá que podemos aprender muito sobre os argumentos que a função print recebe.
 
 - Olhando para esta documentação, você aprenderá que a função de impressão inclui automaticamente um pedaço de código `end='\n'`. O \n indica que a função de impressão criará automaticamente uma quebra de linha ao ser executada. A função print recebe um argumento chamado end` e o padrão é criar uma nova linha.
 
@@ -184,7 +184,7 @@ nome = input("Qual o seu nome? ")
 print(f"olá, {nome}")
 ```
 
-Observe o `f`em `print(f"olá, {nome}")`. Este `f`é um indicador especial para o Python tratar esta string de uma maneira especial, diferente das abordagens anteriores que ilustramos nesta palestra. Espere que você use esse estilo de strings com bastante frequência neste curso.
+Observe o `f` em `print(f"olá, {nome}")`. Este `f` é um indicador especial para o Python tratar esta string de uma maneira especial, diferente das abordagens anteriores que ilustramos nesta palestra. Espere que você use esse estilo de strings com bastante frequência neste curso.
 
 ## Mais Strings
 
@@ -192,7 +192,7 @@ Observe o `f`em `print(f"olá, {nome}")`. Este `f`é um indicador especial para 
 
 - Acontece que embutido em strings está a capacidade de remover espaços em branco de uma string.
 
-- Ao utilizar o método `strip` em`nome` as `nome = nome.strip()`, ele removerá todos os espaços em branco à esquerda e à direita da entrada do usuário. Você pode modificar seu código para ser:
+- Ao utilizar o método `strip` em `nome` as `nome = nome.strip()`, ele removerá todos os espaços em branco à esquerda e à direita da entrada do usuário. Você pode modificar seu código para ser:
 
 ```python
 # Pergunte ao usuário o nome dele
@@ -210,47 +210,49 @@ Executando novamente este programa, independentemente de quantos espaços você 
 - Usando o método `title`, o título seria o nome do usuário:
 
 ```python
-# Ask the user for their name
-name = input("What's your name? ")
+# Pergunte ao usuário o nome dele
+nome = input("Qual o seu nome? ")
 
-# Remove whitespace from the str
-name = name.strip()
+# Remova os espaços em branco da string
+nome = nome.strip()
 
-# Capitalize the first letter of each word
-name = name.title()
+# Capitalizar a primeira letra de cada palavra
+nome = nome.title()
 
-# Print the output
-print(f"hello, {name}")
+# Exiba a saída
+print(f"olá, {nome}")
 ```
 
-- A essa altura, você pode estar muito cansado de digitar `python`repetidamente na janela do terminal. Você usa a seta para cima do seu teclado para recordar os comandos de terminal mais recentes que você fez.
+- A essa altura, você pode estar muito cansado de digitar `python` repetidamente na janela do terminal. Você usa a seta para cima do seu teclado para recordar os comandos de terminal mais recentes que você fez.
 
 - Observe que você pode modificar seu código para ser mais eficiente:
-  
-  ```python
-  # Ask the user for their name
-  name = input("What's your name? ")
-  
-  # Remove whitespace from the str and capitalize the first letter of each word
-  name = name.strip().title()
-  
-  # Print the output
-  print(f"hello, {name}")
-  ```
-  
-  Isso cria o mesmo resultado do seu código anterior.
+
+```python
+# Pergunte ao usuário o nome dele
+nome = input("Qual o seu nome? ")
+
+# Remova o espaço em branco do str e coloque
+# em maiúscula a primeira letra de cada palavra
+nome = nome.strip().title()
+
+# Exiba a saída
+print(f"olá, {nome}")
+```
+
+Isso cria o mesmo resultado do seu código anterior.
 
 - Poderíamos até ir mais longe!
-  
-  ```python
-  # Ask the user for their name, remove whitespace from the str and capitalize the first letter of each word
-  name = input("What's your name? ").strip().title()
-  
-  # Print the output
-  print(f"hello, {name}")
-  ```
 
-- Você pode aprender mais sobre strings na documentação do Python em [str](https://docs.python.org/3/library/stdtypes.html#str)
+```python
+# Pergunte ao usuário seu nome, remova os espaços em branco
+# do str e coloque em maiúscula a primeira letra de cada palavra
+nome = input("Qual o seu nome? ").strip().title()
+
+# Exiba a saída
+print(f"olá, {nome}")
+```
+
+- Você pode aprender mais sobre strings na documentação do Python em [`str`](https://docs.python.org/3/library/stdtypes.html#str)
 
 ## Inteiros ou int
 
@@ -333,54 +335,54 @@ print(f"hello, {name}")
   Essa alteração permite que seu usuário insira `1.2`e `3.4`apresente um total de `4.6`.
 
 - Vamos imaginar, entretanto, que você queira arredondar o total para o inteiro mais próximo. Olhando para a documentação do Python, `round`você verá que os argumentos disponíveis são `round(number[n, ndigits])`. Esses colchetes indicam que algo opcional pode ser especificado pelo programador. Portanto, você poderia `round(n)`arredondar um dígito para o inteiro mais próximo. Como alternativa, você pode codificar da seguinte maneira:
-  
-  ```python
-  # Get the user's input
-  x = float(input("What's x? "))
-  y = float(input("What's y? "))
-  
-  # Create a rounded result
-  z = round(x + y)
-  
-  # Print the result
-  print(z)
-  ```
-  
-  A saída será arredondada para o inteiro mais próximo.
+
+```python
+# Get the user's input
+x = float(input("What's x? "))
+y = float(input("What's y? "))
+
+# Create a rounded result
+z = round(x + y)
+
+# Print the result
+print(z)
+```
+
+A saída será arredondada para o inteiro mais próximo.
 
 - E se quiséssemos formatar a saída de números longos? Por exemplo, em vez de ver `1000`, você pode querer ver `1,000`. Você pode modificar seu código da seguinte maneira:
-  
-  ```python
-  # Get the user's input
-  x = float(input("What's x? "))
-  y = float(input("What's y? "))
-  
-  # Create a rounded result
-  z = round(x + y)
-  
-  # Print the formatted result
-  print(f"{z:,}")
-  ```
-  
-  Embora bastante enigmático, isso `print(f"{z:,}")`cria um cenário em que a saída `z`incluirá vírgulas onde o resultado pode parecer `1,000`ou `2,500`.
+
+```python
+# Get the user's input
+x = float(input("What's x? "))
+y = float(input("What's y? "))
+
+# Create a rounded result
+z = round(x + y)
+
+# Print the formatted result
+print(f"{z:,}")
+```
+
+Embora bastante enigmático, isso `print(f"{z:,}")`cria um cenário em que a saída `z`incluirá vírgulas onde o resultado pode parecer `1,000`ou `2,500`.
 
 ## Mais sobre Pontos Flutuantes
 
 - Como podemos arredondar valores de ponto flutuante? Primeiro, modifique seu código da seguinte maneira:
-  
-  ```python
-  # Get the user's input
-  x = float(input("What's x? "))
-  y = float(input("What's y? "))
-  
-  # Calculate the result
-  z = x / y
-  
-  # Print the result
-  print(z)
-  ```
-  
-  Ao inserir `2`como x e `3`como y, o resultado z `0.6666666666`aparentemente se torna infinito, como poderíamos esperar.
+
+```python
+# Get the user's input
+x = float(input("What's x? "))
+y = float(input("What's y? "))
+
+# Calculate the result
+z = x / y
+
+# Print the result
+print(z)
+```
+
+Ao inserir `2`como x e `3`como y, o resultado z `0.6666666666`aparentemente se torna infinito, como poderíamos esperar.
 
 - Vamos imaginar que queremos arredondar isso para baixo, poderíamos modificar nosso código da seguinte forma:
   
@@ -471,24 +473,24 @@ name = input("What's your name? ")
 hello(name)
 ```
 
-  Aqui, nas primeiras linhas, você está criando sua `hello`função. Desta vez, no entanto, você está dizendo ao compilador que esta função recebe um único parâmetro: uma variável chamada `to`. Portanto, quando você chama `hello(name)`o computador passa `name`para a `hello`função como `to`. É assim que passamos valores para funções. Muito útil! Executando `python hello.py`na janela do terminal, você verá que a saída está muito mais próxima do nosso ideal apresentado anteriormente nesta palestra.
+Aqui, nas primeiras linhas, você está criando sua `hello`função. Desta vez, no entanto, você está dizendo ao compilador que esta função recebe um único parâmetro: uma variável chamada `to`. Portanto, quando você chama `hello(name)`o computador passa `name`para a `hello`função como `to`. É assim que passamos valores para funções. Muito útil! Executando `python hello.py`na janela do terminal, você verá que a saída está muito mais próxima do nosso ideal apresentado anteriormente nesta palestra.
 
 - Podemos alterar nosso código para adicionar um valor padrão a `hello`:
-  
-  ```python
-  # Create our own function
-  def hello(to="world"):
-      print("hello,", to)
-  ```
 
-# Output using our own function
+```python
+# Create our own function
+def hello(to="world"):
+print("hello,", to)
+```
 
-  name = input("What's your name? ")
-  hello(name)
+## Output using our own function
 
-# Output without passing the expected arguments
+name = input("What's your name? ")
+hello(name)
 
-  hello()
+## Output without passing the expected arguments
+
+hello()
 
 ```python
 Teste você mesmo seu código. Observe como o primeiro `hello`se comportará conforme o esperado e o segundo hello, que não recebe um valor, será, por padrão, output `hello, world`.
@@ -500,17 +502,17 @@ Não precisamos ter nossa função no início do nosso programa. Podemos movê-l
 ```python
 def main():
 
-    # Output using our own function
-    name = input("What's your name? ")
-    hello(name)
+# Output using our own function
+name = input("What's your name? ")
+hello(name)
 
-    # Output without passing the expected arguments
-    hello()
+# Output without passing the expected arguments
+hello()
 
 
 # Create our own function
 def hello(to="world"):
-    print("hello,", to)
+print("hello,", to)
 ```
 
   Isso por si só, no entanto, criará uma espécie de erro. Se corrermos `python hello.py`nada acontece! A razão para isso é que nada neste código está realmente chamando a `main`função e dando vida ao nosso programa.
@@ -528,7 +530,7 @@ def hello(to="world"):
       hello()
   ```
 
-# Create our own function
+## Create our own function
 
   def hello(to="world"):
       print("hello,", to)
@@ -546,18 +548,18 @@ Voltando ao nosso `calculator.py`código digitando `code calculator.py`. Apague 
 
 ```python
 def main():
-    x = int(input("What's x? "))
-    print("x squared is", square(x))
+x = int(input("What's x? "))
+print("x squared is", square(x))
 
 
 def square(n):
-    return n * n
+return n * n
 
 
 main()
 ```
 
-  Efetivamente, `x` é passado para `square`. Em seguida, o cálculo de `x * x` é retornado à função principal.
+Efetivamente, `x` é passado para `square`. Em seguida, o cálculo de `x * x` é retornado à função principal.
 
 ## Resumindo
 
