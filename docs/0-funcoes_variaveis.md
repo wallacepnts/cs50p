@@ -260,57 +260,57 @@ print(f"olá, {nome}")
 
 - No mundo da matemática, estamos familiarizados com os operadores +, -, *, / e %. Esse último operador `%` ou operador de módulo pode não ser muito familiar para você.
 
-- Você não precisa usar a janela do editor de texto em seu compilador para executar o código Python. No seu terminal, você pode correr `python`sozinho. Você será apresentado `>>>`na janela do terminal. Você pode então executar um código interativo ao vivo. Você pode digitar `1+1`e ele executará esse cálculo. Este modo não será comumente usado durante este curso.
+- Você não precisa usar a janela do editor de texto em seu compilador para executar o código Python. No seu terminal, você pode executar `python` sozinho. Você será apresentado `>>>` na janela do terminal. Você pode então executar um código interativo ao vivo. Você pode digitar `1+1` e ele executará esse cálculo. Este modo não será comumente usado durante este curso.
 
-- Abrindo o VS Code novamente, podemos digitar `code calculator.py`no terminal. Isso criará um novo arquivo no qual criaremos nossa própria calculadora.
+- Abrindo o VS Code novamente, podemos digitar `code calculadora.py` no terminal. Isso criará um novo arquivo no qual criaremos nossa própria calculadora.
 
 - Primeiro, podemos declarar algumas variáveis.
-  
-  ```python
-  x = 1
-  y = 2
-  
-  z = x + y
-  
-  print(z)
-  ```
-  
-  Naturalmente, quando executamos, `python calculator.py`obtemos o resultado na janela do terminal de `3`. Podemos tornar isso mais interativo usando a `input`função.
-  
-  ```python
-  x = input("What's x? ")
-  y = input("What's y? ")
-  
-  z = x + y
-  
-  print(z)
-  ```
+
+```python
+x = 1
+y = 2
+
+z = x + y
+
+print(z)
+```
+
+Naturalmente, quando executamos, `python calculadora.py` obtemos o resultado na janela do terminal de `3`. Podemos tornar isso mais interativo usando o `input` função.
+
+```python
+x = input("Qual o valor de x? ")
+y = input("Qual o valor de y? ")
+
+z = x + y
+
+print(z)
+```
 
 - Executando este programa, descobrimos que a saída está incorreta como `12`. Por que isso pode ser?
 
-- Anteriormente, vimos como o `+`sinal concatena duas strings. Como a entrada do teclado do computador entra no compilador como texto, ela é tratada como string. Nós, portanto, precisamos converter essa entrada de uma string para um número inteiro. Podemos fazê-lo da seguinte forma:
-  
-  ```python
-  x = input("What's x? ")
-  y = input("What's y? ")
-  
-  z = int(x) + int(y)
-  
-  print(z)
-  ```
-  
-  O resultado agora está correto. O uso de `int(x)`, é chamado de “casting” onde um valor é temporariamente alterado de um tipo de variável (neste caso uma string) para outro (aqui, um inteiro).
+- Anteriormente, vimos como o `+` sinal concatena duas strings. Como a entrada do teclado do computador entra no compilador como texto, ela é tratada como string. Nós, portanto, precisamos converter essa entrada de uma string para um número inteiro. Podemos fazê-lo da seguinte forma:
+
+```python
+x = input("Qual o valor de x? ")
+y = input("Qual o valor de y? ")
+
+z = int(x) + int(y)
+
+print(z)
+```
+
+O resultado agora está correto. O uso de `int(x)`, é chamado de “casting” onde um valor é temporariamente alterado de um tipo de variável (neste caso uma string) para outro (aqui, um inteiro).
 
 - Podemos melhorar ainda mais nosso programa da seguinte forma:
-  
-  ```python
-  x = int(input("What's x? "))
-  y = int(input("What's y? "))
-  
-  print(x + y)
-  ```
-  
-  Isso ilustra que você pode executar funções em funções. A função mais interna é executada primeiro e, em seguida, a externa é executada. Primeiro, a `input`função é executada. Em seguida, a `int`função.
+
+```python
+x = int(input("Qual o valor de x? "))
+y = int(input("Qual o valor de y? "))
+
+print(x + y)
+```
+
+Isso ilustra que você pode executar funções em funções. A função mais interna é executada primeiro e, em seguida, a externa é executada. Primeiro, a função `input` é executada. Em seguida, a função `int`.
 
 - Você pode aprender mais na Documentação do Python sobre [`int`](https://docs.python.org/3/library/functions.html?highlight=float#int).
 
@@ -323,28 +323,28 @@ print(f"olá, {nome}")
 
 - Um valor de ponto flutuante é um número real que possui um ponto decimal, como `0.52`.
 
-- Você pode alterar seu código para suportar floats da seguinte maneira:
-  
-  ```python
-  x = float(input("What's x? "))
-  y = float(input("What's y? "))
-  
-  print(x + y)
-  ```
-  
-  Essa alteração permite que seu usuário insira `1.2`e `3.4`apresente um total de `4.6`.
-
-- Vamos imaginar, entretanto, que você queira arredondar o total para o inteiro mais próximo. Olhando para a documentação do Python, `round`você verá que os argumentos disponíveis são `round(number[n, ndigits])`. Esses colchetes indicam que algo opcional pode ser especificado pelo programador. Portanto, você poderia `round(n)`arredondar um dígito para o inteiro mais próximo. Como alternativa, você pode codificar da seguinte maneira:
+- Você pode alterar seu código para suportar *floats* da seguinte maneira:
 
 ```python
-# Get the user's input
-x = float(input("What's x? "))
-y = float(input("What's y? "))
+x = float(input("Qual o valor de x? "))
+y = float(input("Qual o valor de y? "))
 
-# Create a rounded result
+print(x + y)
+```
+
+Essa alteração permite que seu usuário insira `1.2` e `3.4` apresente um total de `4.6`.
+
+- Vamos imaginar, entretanto, que você queira arredondar o total para o inteiro mais próximo. Olhando para a documentação do Python, `round` você verá que os argumentos disponíveis são `round(number[n, ndigits])`. Esses colchetes indicam que algo opcional pode ser especificado pelo programador. Portanto, você poderia `round(n)` arredondar um dígito para o inteiro mais próximo. Como alternativa, você pode codificar da seguinte maneira:
+
+```python
+# Obtém a entrada do usuário
+x = float(input("Qual o valor de x? "))
+y = float(input("Qual o valor de y? "))
+
+# Cria um resultado arredondado
 z = round(x + y)
 
-# Print the result
+# Exiba a saída
 print(z)
 ```
 
@@ -353,68 +353,68 @@ A saída será arredondada para o inteiro mais próximo.
 - E se quiséssemos formatar a saída de números longos? Por exemplo, em vez de ver `1000`, você pode querer ver `1,000`. Você pode modificar seu código da seguinte maneira:
 
 ```python
-# Get the user's input
-x = float(input("What's x? "))
-y = float(input("What's y? "))
+# Obtém a entrada do usuário
+x = float(input("Qual o valor de x? "))
+y = float(input("Qual o valor de y? "))
 
-# Create a rounded result
+# Cria um resultado arredondado
 z = round(x + y)
 
-# Print the formatted result
+# Exiba a saída
 print(f"{z:,}")
 ```
 
-Embora bastante enigmático, isso `print(f"{z:,}")`cria um cenário em que a saída `z`incluirá vírgulas onde o resultado pode parecer `1,000`ou `2,500`.
+Embora bastante enigmático, isso `print(f"{z:,}")` cria um cenário em que a saída `z` incluirá vírgulas onde o resultado pode parecer `1,000` ou `2,500`.
 
 ## Mais sobre Pontos Flutuantes
 
 - Como podemos arredondar valores de ponto flutuante? Primeiro, modifique seu código da seguinte maneira:
 
 ```python
-# Get the user's input
-x = float(input("What's x? "))
-y = float(input("What's y? "))
+# Obtém a entrada do usuário
+x = float(input("Qual o valor de x? "))
+y = float(input("Qual o valor de y? "))
 
-# Calculate the result
+# Calcula o resultado
 z = x / y
 
-# Print the result
+# Exiba a saída
 print(z)
 ```
 
-Ao inserir `2`como x e `3`como y, o resultado z `0.6666666666`aparentemente se torna infinito, como poderíamos esperar.
+Ao inserir `2` como x e `3` como y, o resultado z `0.6666666666` aparentemente se torna infinito, como poderíamos esperar.
 
 - Vamos imaginar que queremos arredondar isso para baixo, poderíamos modificar nosso código da seguinte forma:
-  
-  ```python
-  # Get the user's input
-  x = float(input("What's x? "))
-  y = float(input("What's y? "))
-  
-  # Calculate the result and round
-  z = round(x / y, 2)
-  
-  # Print the result
-  print(z)
-  ```
-  
-  Como poderíamos esperar, isso arredondará o resultado para as duas casas decimais mais próximas.
 
-- Também poderíamos usar `fstring`para formatar a saída da seguinte maneira:
-  
-  ```python
-  # Get the user's input
-  x = float(input("What's x? "))
-  y = float(input("What's y? "))
-  
-  # Calculate the result
-  z = x / y
-  
-  # Print the result
-  print(f"{z:.2f}")
-  ```
-  
-  Esse código enigmático `fstring`exibe o mesmo que nossa estratégia de arredondamento anterior.
+```python
+# Obtém a entrada do usuário
+x = float(input("Qual o valor de x? "))
+y = float(input("Qual o valor de y? "))
+
+# Calcula o resultado e arredonda
+z = round(x / y, 2)
+
+# Exiba a saída
+print(z)
+```
+
+Como poderíamos esperar, isso arredondará o resultado para as duas casas decimais mais próximas.
+
+- Também poderíamos usar `fstring` para formatar a saída da seguinte maneira:
+
+```python
+# Obtém a entrada do usuário
+x = float(input("Qual o valor de x? "))
+y = float(input("Qual o valor de y? "))
+
+# Calcula o resultado
+z = x / y
+
+# Exiba a saída
+print(f"{z:.2f}")
+```
+
+Esse código enigmático `fstring` exibe o mesmo que nossa estratégia de arredondamento anterior.
 
 - Você pode aprender mais na documentação do Python sobre [`float`](https://docs.python.org/3/library/functions.html?highlight=float#float).
 
@@ -422,82 +422,78 @@ Ao inserir `2`como x e `3`como y, o resultado z `0.6666666666`aparentemente se t
 
 - Não seria legal criar nossas próprias funções?
 
-- Vamos trazer de volta nosso código final `hello.py`digitando `code hello.py`na janela do terminal. Seu código inicial deve ter a seguinte aparência:
-  
-  ```python
-  # Ask the user for their name, remove whitespace from the str and capitalize the first letter of each word
-  name = input("What's your name? ").strip().title()
-  
-  # Print the output
-  print(f"hello, {name}")
-  ```
-  
-  Podemos melhorar nosso código para criar nossa própria função especial que diga “olá” para nós!
-
-- Apagando todo nosso código em nosso editor de texto, vamos começar do zero:
-  
-  ```python
-  name = input("What's your name? ")
-  hello()
-  print(name)
-  ```
-  
-  Tentando executar este código, seu compilador lançará um erro. Afinal, não existe uma função definida para `hello`.
-
-- Podemos criar nossa própria função chamada `hello`da seguinte forma:
-  
-  ```python
-  def hello():
-      print("hello")
-  ```
-  
-  name = input("What's your name? ")
-  hello()
-  print(name)
+- Vamos trazer de volta nosso código final `ola.py` digitando `code ola.py`na janela do terminal. Seu código inicial deve ter a seguinte aparência:
 
 ```python
-Observe que tudo abaixo `def hello()`é recuado. Python é uma linguagem recuada. Ele usa indentação para entender o que faz parte da função acima. Portanto, tudo na `hello`função deve ser recuado. Quando algo não está recuado, ele o trata como se não estivesse dentro da `hello`função. Executando `python hello.py`na janela do terminal, você verá que sua saída não é exatamente como você deseja.
+# Pergunte ao usuário seu nome, remova os espaços em branco
+# do str e coloque em maiúscula a primeira letra de cada palavra
+nome = input("Qual o seu nome? ").strip().title()
 
-- 
-
-Podemos melhorar ainda mais nosso código:
-
-```python
-# Create our own function
-def hello(to):
-    print("hello,", to)
-
-
-# Output using our own function
-name = input("What's your name? ")
-hello(name)
+# Exiba a saída
+print(f"olá, {nome}")
 ```
 
-Aqui, nas primeiras linhas, você está criando sua `hello`função. Desta vez, no entanto, você está dizendo ao compilador que esta função recebe um único parâmetro: uma variável chamada `to`. Portanto, quando você chama `hello(name)`o computador passa `name`para a `hello`função como `to`. É assim que passamos valores para funções. Muito útil! Executando `python hello.py`na janela do terminal, você verá que a saída está muito mais próxima do nosso ideal apresentado anteriormente nesta palestra.
+Podemos melhorar nosso código para criar nossa própria função especial que diga “olá” para nós!
 
-- Podemos alterar nosso código para adicionar um valor padrão a `hello`:
+- Apagando todo nosso código em nosso editor de texto, vamos começar do zero:
+
+```python
+nome = input("Qual o seu nome? ")
+ola()
+print(nome)
+```
+
+Tentando executar este código, seu compilador lançará um erro. Afinal, não existe uma função definida para `ola`.
+
+- Podemos criar nossa própria função chamada `ola` da seguinte forma:
+
+```python
+def ola():
+    print("olá")
+
+nome = input("Qual o seu nome? ")
+ola()
+print(nome)
+```
+
+Observe que tudo abaixo `def ola()` é indentado. Python é uma linguagem indentada. Ele usa indentação para entender o que faz parte da função acima. Portanto, tudo na função `ola` deve ser indentada. Quando algo não está indentado, ele o trata como se não estivesse dentro da função `ola`. Executando `python ola.py` na janela do terminal, você verá que sua saída não é exatamente como você deseja.
+
+- Podemos melhorar ainda mais nosso código:
+
+```python
+# Cria nossa própria função
+def ola(to):
+    print("olá,", to)
+
+
+# Saída usando nossa própria função
+nome = input("Qual o seu nome? ")
+ola(nome)
+```
+
+Aqui, nas primeiras linhas, você está criando sua função `ola`. Desta vez, no entanto, você está dizendo ao compilador que esta função recebe um único parâmetro: uma variável chamada `to`. Portanto, quando você chama `ola(nome)` o computador passa `nome` para a função `ola` como `to`. É assim que passamos valores para funções. Muito útil! Executando `python ola.py` na janela do terminal, você verá que a saída está muito mais próxima do nosso ideal apresentado anteriormente nesta palestra.
+
+- Podemos alterar nosso código para adicionar um valor padrão a `ola`:
 
 ```python
 # Create our own function
 def hello(to="world"):
 print("hello,", to)
-```
 
-## Output using our own function
+
+# Output using our own function
 
 name = input("What's your name? ")
 hello(name)
 
-## Output without passing the expected arguments
+# Output without passing the expected arguments
 
 hello()
+```
 
-```python
 Teste você mesmo seu código. Observe como o primeiro `hello`se comportará conforme o esperado e o segundo hello, que não recebe um valor, será, por padrão, output `hello, world`.
 
-- 
-
-Não precisamos ter nossa função no início do nosso programa. Podemos movê-lo para baixo, mas precisamos informar ao compilador que temos uma `main`função e temos uma `hello`função separada.
+- Não precisamos ter nossa função no início do nosso programa. Podemos movê-lo para baixo, mas precisamos informar ao compilador que temos uma `main`função e temos uma `hello`função separada.
 
 ```python
 def main():
@@ -515,29 +511,29 @@ def hello(to="world"):
 print("hello,", to)
 ```
 
-  Isso por si só, no entanto, criará uma espécie de erro. Se corrermos `python hello.py`nada acontece! A razão para isso é que nada neste código está realmente chamando a `main`função e dando vida ao nosso programa.
+Isso por si só, no entanto, criará uma espécie de erro. Se corrermos `python hello.py`nada acontece! A razão para isso é que nada neste código está realmente chamando a `main`função e dando vida ao nosso programa.
 
 - A seguinte modificação muito pequena chamará a `main`função e restaurará nosso programa para funcionar corretamente:
-  
-  ```python
-  def main():
-  
-      # Output using our own function
-      name = input("What's your name? ")
-      hello(name)
-  
-      # Output without passing the expected arguments
-      hello()
-  ```
+
+```python
+def main():
+
+# Output using our own function
+name = input("What's your name? ")
+hello(name)
+
+# Output without passing the expected arguments
+hello()
+
 
 ## Create our own function
 
-  def hello(to="world"):
-      print("hello,", to)
+def hello(to="world"):
+print("hello,", to)
 
-  main()
+main()
+```
 
-```python
 ## Retornando Valores
 
 - Você pode imaginar muitos cenários em que não deseja apenas que uma função execute uma ação, mas também que retorne um valor para a função principal. Por exemplo, em vez de simplesmente imprimir o cálculo de `x + y`, você pode querer uma função para retornar o valor desse cálculo para outra parte do seu programa. Esse “repasse” de um valor chamamos de `return`valor.

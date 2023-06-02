@@ -1,8 +1,8 @@
-# Demonstra formatação após a casa decimal
+# Demonstra arredondamento após a vírgula
 
 x = float(input("Qual o valor de x? "))
 y = float(input("Qual o valor de y? "))
 
-z = x / y
+z = round(x / y, 2)
 
-print(f"{z:.2f}")
+print(z)

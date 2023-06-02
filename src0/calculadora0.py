@@ -1,4 +1,4 @@
-# Demonstrates addition
+# Demonstra adição
 
 x = 1
 y = 2

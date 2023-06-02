@@ -1,8 +1,6 @@
-# Demonstra formatação após a casa decimal
+# Demonstra com menos variáveis
 
 x = float(input("Qual o valor de x? "))
 y = float(input("Qual o valor de y? "))
 
-z = x / y
-
-print(f"{z:.2f}")
+print(round(x + y))

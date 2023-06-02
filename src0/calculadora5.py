@@ -1,8 +1,8 @@
-# Demonstra formatação após a casa decimal
+# Demonstra o arredondamento para o int mais próximo
 
 x = float(input("Qual o valor de x? "))
 y = float(input("Qual o valor de y? "))
 
-z = x / y
+z = round(x + y)
 
-print(f"{z:.2f}")
+print(z)
