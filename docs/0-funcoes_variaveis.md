@@ -67,7 +67,7 @@ print(nome)
 
 - O resultado na janela do terminal seria
 
-```python
+```
 Qual o seu nome? David
 olá
 David
