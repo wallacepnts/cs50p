@@ -67,7 +67,7 @@ print(nome)
 
 - O resultado na janela do terminal seria
 
-```
+```prompt
 Qual o seu nome? David
 olá
 David
@@ -462,8 +462,8 @@ Observe que tudo abaixo `def ola()` é indentado. Python é uma linguagem indent
 
 ```python
 # Cria nossa própria função
-def ola(to):
-    print("olá,", to)
+def ola(para):
+    print("olá,", para)
 
 
 # Saída usando nossa própria função
@@ -476,86 +476,82 @@ Aqui, nas primeiras linhas, você está criando sua função `ola`. Desta vez, n
 - Podemos alterar nosso código para adicionar um valor padrão a `ola`:
 
 ```python
-# Create our own function
-def hello(to="world"):
-print("hello,", to)
+# Cria nossa própria função
+def ola(para="mundo"):
+    print("olá,", para)
 
 
-# Output using our own function
+# Saída usando nossa própria função
+nome = input("Qual o seu nome? ")
+ola(nome)
 
-name = input("What's your name? ")
-hello(name)
-
-# Output without passing the expected arguments
-
-hello()
+# Saída sem passar os argumentos esperados
+ola()
 ```
 
-Teste você mesmo seu código. Observe como o primeiro `hello`se comportará conforme o esperado e o segundo hello, que não recebe um valor, será, por padrão, output `hello, world`.
+Teste você mesmo seu código. Observe como o primeiro `ola` se comportará conforme o esperado e o segundo ola, que não recebe um valor, será, por padrão, output `olá, mundo`.
 
-- Não precisamos ter nossa função no início do nosso programa. Podemos movê-lo para baixo, mas precisamos informar ao compilador que temos uma `main`função e temos uma `hello`função separada.
+- Não precisamos ter nossa função no início do nosso programa. Podemos movê-lo para baixo, mas precisamos informar ao compilador que temos uma função `main` e temos uma função `ola` separada.
 
 ```python
 def main():
 
-# Output using our own function
-name = input("What's your name? ")
-hello(name)
+    # Saída usando nossa própria função
+    nome = input("Qual o seu nome? ")
+    ola(nome)
 
-# Output without passing the expected arguments
-hello()
+    # Saída sem passar os argumentos esperados
+    ola()
 
 
-# Create our own function
-def hello(to="world"):
-print("hello,", to)
+# Cria nossa própria função
+def ola(para="mundo"):
+    print("olá,", para)
 ```
 
-Isso por si só, no entanto, criará uma espécie de erro. Se corrermos `python hello.py`nada acontece! A razão para isso é que nada neste código está realmente chamando a `main`função e dando vida ao nosso programa.
+Isso por si só, no entanto, criará uma espécie de erro. Se executarmos `python ola.py` nada acontece! A razão para isso é que nada neste código está realmente chamando a função `main` e dando vida ao nosso programa.
 
-- A seguinte modificação muito pequena chamará a `main`função e restaurará nosso programa para funcionar corretamente:
+- A seguinte modificação muito pequena chamará a função `main` e restaurará nosso programa para funcionar corretamente:
 
 ```python
 def main():
 
-# Output using our own function
-name = input("What's your name? ")
-hello(name)
+    # Saída usando nossa própria função
+    nome = input("Qual o seu nome? ")
+    ola(nome)
 
-# Output without passing the expected arguments
-hello()
+    # Saída sem passar os argumentos esperados
+    ola()
 
 
-## Create our own function
+# Cria nossa própria função
+def ola(para="mundo"):
+    print("olá,", para)
 
-def hello(to="world"):
-print("hello,", to)
 
 main()
 ```
 
 ## Retornando Valores
 
-- Você pode imaginar muitos cenários em que não deseja apenas que uma função execute uma ação, mas também que retorne um valor para a função principal. Por exemplo, em vez de simplesmente imprimir o cálculo de `x + y`, você pode querer uma função para retornar o valor desse cálculo para outra parte do seu programa. Esse “repasse” de um valor chamamos de `return`valor.
+- Você pode imaginar muitos cenários em que não deseja apenas que uma função execute uma ação, mas também que retorne um valor para a função principal. Por exemplo, em vez de simplesmente imprimir o cálculo de `x + y`, você pode querer uma função para retornar o valor desse cálculo para outra parte do seu programa. Esse “repasse” de um valor chamamos de valor `return`.
 
-- 
-
-Voltando ao nosso `calculator.py`código digitando `code calculator.py`. Apague todo o código lá. Refaça o código da seguinte forma:
+- Voltando ao nosso código `calculadora.py` digitando `code calculadora.py`. Apague todo o código lá. Refaça o código da seguinte forma:
 
 ```python
 def main():
-x = int(input("What's x? "))
-print("x squared is", square(x))
+    x = int(input("Qual o valor de x? "))
+    print("x ao quadrado é", quadrado(x))
 
 
-def square(n):
-return n * n
+def quadrado(n):
+    return n * n
 
 
 main()
 ```
 
-Efetivamente, `x` é passado para `square`. Em seguida, o cálculo de `x * x` é retornado à função principal.
+Efetivamente, `x` é passado para `quadrado`. Em seguida, o cálculo de `x * x` é retornado à função principal.
 
 ## Resumindo
 
@@ -563,15 +559,15 @@ Através do trabalho desta única palestra, você aprendeu habilidades que usar�
 
 - Criando seus primeiros programas em Python;
 - Funções;
-- Insetos;
+- Bugs;
 - Variáveis;
 - Comentários;
 - Pseudo-código;
-- Cordas;
+- Strings;
 - Parâmetros;
 - Strings formatadas;
-- inteiros;
+- Inteiros;
 - Princípios de legibilidade;
-- flutua;
+- Ponto Flutuante;
 - Criando suas próprias funções; e
 - Valores de retorno.
