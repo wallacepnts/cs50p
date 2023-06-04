@@ -12,7 +12,5 @@ elif arquivo.endswith('.txt'):
     print('text/plain')
 elif arquivo.endswith('.zip'):
     print('application/zip')
-elif arquivo.endswith('.bin'):
-    print('application/octet-stream')
 else:
     print('application/octet-stream')
